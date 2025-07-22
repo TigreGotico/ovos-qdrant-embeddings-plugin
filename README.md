@@ -1,3 +1,5 @@
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/TigreGotico/ovos-qdrant-embeddings-plugin)
+
 # QdrantEmbeddingsDB Plugin
 
 ## Overview
