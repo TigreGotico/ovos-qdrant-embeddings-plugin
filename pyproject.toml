@@ -17,6 +17,9 @@ dependencies = [
     "qdrant-client",
 ]
 
+[project.optional-dependencies]
+test = ["pytest", "numpy", "qdrant-client"]
+
 [project.urls]
 Homepage = "https://github.com/TigreGotico/ovos-qdrant-embeddings-plugin"
 Repository = "https://github.com/TigreGotico/ovos-qdrant-embeddings-plugin"
