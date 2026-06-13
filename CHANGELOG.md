@@ -1,12 +1,20 @@
 # Changelog
 
+## [0.0.1a4](https://github.com/OpenVoiceOS/ovos-qdrant-embeddings-plugin/tree/0.0.1a4) (2026-06-13)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-qdrant-embeddings-plugin/compare/0.0.1a3...0.0.1a4)
+
+**Merged pull requests:**
+
+- feat: productionize Qdrant embeddings plugin \(README, docs, examples, e2e\) [\#4](https://github.com/OpenVoiceOS/ovos-qdrant-embeddings-plugin/pull/4) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.0.1a3](https://github.com/OpenVoiceOS/ovos-qdrant-embeddings-plugin/tree/0.0.1a3) (2026-06-13)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-qdrant-embeddings-plugin/compare/0.0.1a2...0.0.1a3)
 
 **Merged pull requests:**
 
-- docs: OVOS attribution \(NGI0/NLnet + Visio\) + OpenVoiceOS URLs [\#3](https://github.com/OpenVoiceOS/ovos-qdrant-embeddings-plugin/pull/3) ([JarbasAl](https://github.com/JarbasAl))
+- feat: productionize Qdrant embeddings plugin \(README, docs, examples, e2e\) [\#3](https://github.com/OpenVoiceOS/ovos-qdrant-embeddings-plugin/pull/3) ([JarbasAl](https://github.com/JarbasAl))
 
 ## [0.0.1a2](https://github.com/OpenVoiceOS/ovos-qdrant-embeddings-plugin/tree/0.0.1a2) (2026-06-13)
 
