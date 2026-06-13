@@ -114,6 +114,10 @@ pytest test/ -v
 Originally developed by [TigreGótico](https://tigregotico.pt) for [OpenVoiceOS](https://openvoiceos.org),
 sponsored by VisioLab. Modernized under the [NGI0 Commons Fund](https://nlnet.nl/commonsfund) / [NLnet](https://nlnet.nl).
 
+<img src="https://github.com/user-attachments/assets/809588a2-32a2-406c-98c0-f88bf7753cb4" width="220" alt="VisioLab"/>
+
+> This work was sponsored by VisioLab, part of [Royal Dutch Visio](https://visio.org/), is the test, education, and research center in the field of (innovative) assistive technology for blind and visually impaired people and professionals. We explore (new) technological developments such as Voice, VR and AI and make the knowledge and expertise we gain available to everyone.
+
 [![NGI0 Commons Fund](./ngi.png)](https://nlnet.nl/project/OpenVoiceOS)
 
 This project was funded through the [NGI0 Commons Fund](https://nlnet.nl/commonsfund),
