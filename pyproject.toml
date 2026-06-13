@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ovos-qdrant-embeddings-plugin"
+dynamic = ["version"]
+description = "A qdrant embeddings plugin for OVOS"
+readme = "README.md"
+license = "MIT"
+authors = [{name = "jarbasai", email = "jarbasai@mailfence.com"}]
+requires-python = ">=3.9"
+keywords = ["OVOS", "openvoiceos", "plugin", "qdrant", "embeddings"]
+dependencies = [
+    "ovos-plugin-manager>=0.1.0,<3.0.0",
+    "numpy",
+    "qdrant-client",
+]
+
+[project.optional-dependencies]
+test = ["pytest", "numpy", "qdrant-client"]
+
+[project.urls]
+Homepage = "https://github.com/TigreGotico/ovos-qdrant-embeddings-plugin"
+Repository = "https://github.com/TigreGotico/ovos-qdrant-embeddings-plugin"
+
+[project.entry-points."opm.embeddings"]
+ovos-qdrant-embeddings-plugin = "ovos_qdrant_embeddings:QdrantEmbeddingsDB"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["ovos_qdrant_embeddings*"]
+
+[tool.setuptools.dynamic]
+version = {attr = "ovos_qdrant_embeddings.version.__version__"}
