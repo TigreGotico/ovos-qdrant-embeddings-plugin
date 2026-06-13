@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.1a6](https://github.com/OpenVoiceOS/ovos-qdrant-embeddings-plugin/tree/0.0.1a6) (2026-06-13)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-qdrant-embeddings-plugin/compare/0.0.1a5...0.0.1a6)
+
+**Merged pull requests:**
+
+- chore: remove agent-audit scratch files [\#5](https://github.com/OpenVoiceOS/ovos-qdrant-embeddings-plugin/pull/5) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.0.1a5](https://github.com/OpenVoiceOS/ovos-qdrant-embeddings-plugin/tree/0.0.1a5) (2026-06-13)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-qdrant-embeddings-plugin/compare/0.0.1a4...0.0.1a5)
