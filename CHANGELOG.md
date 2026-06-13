@@ -1,12 +1,20 @@
 # Changelog
 
-## [0.0.1a2](https://github.com/TigreGotico/ovos-qdrant-embeddings-plugin/tree/0.0.1a2) (2026-06-13)
+## [0.0.1a3](https://github.com/OpenVoiceOS/ovos-qdrant-embeddings-plugin/tree/0.0.1a3) (2026-06-13)
 
-[Full Changelog](https://github.com/TigreGotico/ovos-qdrant-embeddings-plugin/compare/f716bac610cc53fe4e3115e9f276d2f52c939b8e...0.0.1a2)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-qdrant-embeddings-plugin/compare/0.0.1a2...0.0.1a3)
 
 **Merged pull requests:**
 
-- test: add Qdrant EmbeddingsDB test suite, full CI, drop duplicate module [\#2](https://github.com/TigreGotico/ovos-qdrant-embeddings-plugin/pull/2) ([JarbasAl](https://github.com/JarbasAl))
+- docs: OVOS attribution \(NGI0/NLnet + Visio\) + OpenVoiceOS URLs [\#3](https://github.com/OpenVoiceOS/ovos-qdrant-embeddings-plugin/pull/3) ([JarbasAl](https://github.com/JarbasAl))
+
+## [0.0.1a2](https://github.com/OpenVoiceOS/ovos-qdrant-embeddings-plugin/tree/0.0.1a2) (2026-06-13)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-qdrant-embeddings-plugin/compare/f716bac610cc53fe4e3115e9f276d2f52c939b8e...0.0.1a2)
+
+**Merged pull requests:**
+
+- test: add Qdrant EmbeddingsDB test suite, full CI, drop duplicate module [\#2](https://github.com/OpenVoiceOS/ovos-qdrant-embeddings-plugin/pull/2) ([JarbasAl](https://github.com/JarbasAl))
 
 
 
