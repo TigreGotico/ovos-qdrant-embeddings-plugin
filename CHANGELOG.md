@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.1a5](https://github.com/OpenVoiceOS/ovos-qdrant-embeddings-plugin/tree/0.0.1a5) (2026-06-13)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-qdrant-embeddings-plugin/compare/0.0.1a4...0.0.1a5)
+
+**Merged pull requests:**
+
+- Configure Renovate [\#1](https://github.com/OpenVoiceOS/ovos-qdrant-embeddings-plugin/pull/1) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [0.0.1a4](https://github.com/OpenVoiceOS/ovos-qdrant-embeddings-plugin/tree/0.0.1a4) (2026-06-13)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-qdrant-embeddings-plugin/compare/0.0.1a3...0.0.1a4)
