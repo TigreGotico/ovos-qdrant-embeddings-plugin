@@ -12,7 +12,7 @@ authors = [{name = "jarbasai", email = "jarbasai@mailfence.com"}]
 requires-python = ">=3.9"
 keywords = ["OVOS", "openvoiceos", "plugin", "qdrant", "embeddings"]
 dependencies = [
-    "ovos-plugin-manager>=0.1.0,<3.0.0",
+    "ovos-plugin-manager>=2.1.0,<3.0.0",
     "numpy",
     "qdrant-client",
 ]
