@@ -28,13 +28,13 @@ It pairs naturally with embedding producers such as
 [ovos-gguf-plugin](https://github.com/OpenVoiceOS/ovos-gguf-plugin) that generate the vectors
 you store here.
 
-## Quickstart — in-memory DB
+## Quickstart: in-memory DB
 
 ```python
 import numpy as np
 from ovos_qdrant_embeddings import QdrantEmbeddingsDB
 
-# In-memory: no host, no path — perfect for development and CI
+# In-memory: no host, no path. Use it for development and CI.
 db = QdrantEmbeddingsDB(config={"vector_size": 4})
 
 # Store vectors
@@ -42,7 +42,7 @@ db.add_embeddings("apple",  np.array([1.0, 0.0, 0.0, 0.0]))
 db.add_embeddings("banana", np.array([0.0, 1.0, 0.0, 0.0]))
 db.add_embeddings("cherry", np.array([0.0, 0.0, 1.0, 0.0]))
 
-# Nearest-neighbour query — returns [(key, score), ...]
+# Nearest-neighbour query, returns [(key, score), ...]
 results = db.query(np.array([0.9, 0.1, 0.0, 0.0]), top_k=2)
 print(results)  # [('apple', 0.999...), ('banana', 0.099...)]
 ```
@@ -54,25 +54,25 @@ print(results)  # [('apple', 0.999...), ('banana', 0.099...)]
 | `vector_size` | **required** | Dimension of the embedding vectors. Must match your embedding model. |
 | `distance_metric` | `"cosine"` | Similarity function: `"cosine"`, `"euclidean"`, or `"dot"`. |
 | `default_collection_name` | `"embeddings"` | Collection created on startup and used when no collection is specified. |
-| `host` | — | Remote Qdrant host (activates HTTP client mode). |
+| `host` | none | Remote Qdrant host (activates HTTP client mode). |
 | `port` | `6333` | HTTP port for remote client. |
 | `grpc_port` | `6334` | gRPC port for remote client. |
-| `api_key` | — | API key for Qdrant Cloud or authenticated remote instances. |
-| `path` | — | Filesystem path for local persistent storage (activates file-backed mode). |
+| `api_key` | none | API key for Qdrant Cloud or authenticated remote instances. |
+| `path` | none | Filesystem path for local persistent storage (activates file-backed mode). |
 
 ### Three client modes
 
-**In-memory** (development / CI) — neither `host` nor `path` set:
+**In-memory** (development or CI): neither `host` nor `path` set.
 ```python
 config = {"vector_size": 384}
 ```
 
-**Local persistent** — data survives restarts:
+**Local persistent**: data survives restarts.
 ```python
 config = {"path": "/var/lib/ovos/qdrant", "vector_size": 384}
 ```
 
-**Remote** — connects to a running Qdrant server or Qdrant Cloud:
+**Remote**: connects to a running Qdrant server or Qdrant Cloud.
 ```python
 config = {
     "host": "my-qdrant.example.com",
@@ -85,7 +85,7 @@ config = {
 ## When to choose Qdrant over ChromaDB
 
 - You need to run the vector store as a **separate network service** (microservice / homelab).
-- Your collection grows to **millions of vectors** — Qdrant's HNSW index scales well.
+- Your collection grows to **millions of vectors**. Qdrant's HNSW index scales well at that size.
 - You want **Qdrant Cloud** managed hosting.
 - You need **gRPC** for high-throughput batch ingestion.
 
@@ -94,15 +94,15 @@ Both expose the same `EmbeddingsDB` interface, so switching is a config change.
 
 ## Further reading
 
-- [`docs/configuration.md`](docs/configuration.md) — all config keys, client modes, cosine normalization note
-- [`docs/usage.md`](docs/usage.md) — collections, CRUD, batch ops, metadata, query
-- [`examples/quickstart.py`](examples/quickstart.py) — in-memory add + query
-- [`examples/collections.py`](examples/collections.py) — multi-collection workflow
-- [`examples/remote_server.py`](examples/remote_server.py) — remote Qdrant setup
+- [`docs/configuration.md`](docs/configuration.md): all config keys, client modes, and the cosine normalization note.
+- [`docs/usage.md`](docs/usage.md): collections, CRUD, batch operations, metadata, and query.
+- [`examples/quickstart.py`](examples/quickstart.py): add and query vectors in memory.
+- [`examples/collections.py`](examples/collections.py): a multi-collection workflow.
+- [`examples/remote_server.py`](examples/remote_server.py): remote Qdrant setup.
 
 ## Testing
 
-Tests use an in-memory Qdrant client — no server required.
+Tests use an in-memory Qdrant client. No server is required.
 
 ```bash
 pip install ovos-qdrant-embeddings-plugin[test]

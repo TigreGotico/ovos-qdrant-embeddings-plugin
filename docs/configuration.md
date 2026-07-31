@@ -10,11 +10,11 @@ the OPM plugin config system when loaded by OVOS).
 | `vector_size` | `int` | **required** | Dimension of every vector stored in this DB. Must match the output dimension of your embedding model. All collections share this size. |
 | `distance_metric` | `str` | `"cosine"` | Similarity function used for nearest-neighbour search. One of `"cosine"`, `"euclidean"`, `"dot"`. |
 | `default_collection_name` | `str` | `"embeddings"` | Name of the collection created automatically on startup. Used whenever `collection_name` is `None`. |
-| `host` | `str` | — | Hostname of a remote Qdrant server. Setting this key activates **remote** client mode. |
+| `host` | `str` | none | Hostname of a remote Qdrant server. Setting this key activates **remote** client mode. |
 | `port` | `int` | `6333` | HTTP REST port for the remote client. |
 | `grpc_port` | `int` | `6334` | gRPC port for the remote client (used for high-throughput batch operations). |
-| `api_key` | `str` | — | Authentication key for Qdrant Cloud or a secured self-hosted instance. |
-| `path` | `str` | — | Filesystem directory for local persistent storage. Setting this key (without `host`) activates **local** client mode. |
+| `api_key` | `str` | none | Authentication key for Qdrant Cloud or a secured self-hosted instance. |
+| `path` | `str` | none | Filesystem directory for local persistent storage. Setting this key (without `host`) activates **local** client mode. |
 
 ## Client modes
 
@@ -64,20 +64,23 @@ or any instance with authentication enabled.
 
 | Value | Qdrant enum | Best for |
 |-------|-------------|----------|
-| `"cosine"` | `Distance.COSINE` | Sentence / word embeddings; direction matters, magnitude does not. |
+| `"cosine"` | `Distance.COSINE` | Sentence or word embeddings. Direction matters, magnitude does not. |
 | `"euclidean"` | `Distance.EUCLID` | Dense float vectors where absolute distance matters. |
-| `"dot"` | `Distance.DOT` | Pre-normalized vectors; equivalent to cosine but faster. |
+| `"dot"` | `Distance.DOT` | Pre-normalized vectors. Equivalent to cosine, but faster. |
 
 ## Cosine normalization note
 
 When `distance_metric` is `"cosine"`, Qdrant **normalizes every vector to unit length on
-upsert**. This means vectors retrieved via `get_embeddings` are unit-length, not the
-original floats. Nearest-neighbour query results are unaffected — direction is preserved —
-but you should not compare retrieved vectors to originals with `np.allclose`. Compare
-directions instead:
+upsert**. Vectors retrieved through `get_embeddings` are unit-length, not the original
+floats. Nearest-neighbour query results are unaffected, because direction is preserved.
+Do not compare retrieved vectors to originals with `np.allclose`. Compare directions
+instead:
 
 ```python
 norm_v = v / np.linalg.norm(v)
 norm_r = retrieved / np.linalg.norm(retrieved)
 np.testing.assert_allclose(norm_v, norm_r, atol=1e-5)
 ```
+
+---
+[Home](../README.md) · [Usage →](usage.md)
