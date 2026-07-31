@@ -6,8 +6,8 @@ Qdrant organizes vectors into named **collections**. Each collection shares the 
 `vector_size` and `distance_metric` configured at construction time.
 
 A default collection (`default_collection_name`, default `"embeddings"`) is created
-automatically on startup. Most operations accept an optional `collection_name`; when
-omitted the default collection is used.
+automatically on startup. Most operations accept an optional `collection_name`. When
+you omit it, the default collection is used.
 
 ```python
 from ovos_qdrant_embeddings import QdrantEmbeddingsDB
@@ -64,7 +64,7 @@ db.add_embeddings_batch(keys, vecs, metadata=metas)
 # Returns np.ndarray or None
 emb = db.get_embeddings("hello-world", collection_name="skills")
 
-# With metadata — returns (np.ndarray, dict) or (None, None)
+# With metadata, returns (np.ndarray, dict) or (None, None)
 emb, meta = db.get_embeddings("hello-world", collection_name="skills", return_metadata=True)
 ```
 
@@ -77,7 +77,7 @@ for key, emb, meta in results:
     print(key, meta)
 ```
 
-## Querying — nearest-neighbour search
+## Querying: nearest-neighbour search
 
 ```python
 query_vec = np.array([0.9, 0.1, 0.0, 0.0])
@@ -85,7 +85,7 @@ query_vec = np.array([0.9, 0.1, 0.0, 0.0])
 # Returns list of (key, score)
 hits = db.query(query_vec, top_k=5)
 
-# With metadata — returns list of (key, score, metadata)
+# With metadata, returns list of (key, score, metadata)
 hits = db.query(query_vec, top_k=5, return_metadata=True)
 for key, score, meta in hits:
     print(f"{key}: {score:.4f}  {meta}")
@@ -120,8 +120,11 @@ n = db.count_embeddings_in_collection("skills")   # named collection
 ## Metadata
 
 Arbitrary JSON-serializable metadata can be attached to any vector. The internal key
-`original_key` is reserved — it is injected automatically and stripped from results
-returned to the caller.
+`original_key` is reserved. The plugin injects it automatically and strips it from
+results returned to the caller.
 
 All metadata fields are stored in the Qdrant point payload and are returned verbatim
 (minus `original_key`).
+
+---
+[← Configuration](configuration.md) · [Home](../README.md)
