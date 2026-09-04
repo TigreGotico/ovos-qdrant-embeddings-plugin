@@ -44,7 +44,7 @@ db.add_embeddings("cherry", np.array([0.0, 0.0, 1.0, 0.0]))
 
 # Nearest-neighbour query, returns [(key, score), ...]
 results = db.query(np.array([0.9, 0.1, 0.0, 0.0]), top_k=2)
-print(results)  # [('apple', 0.999...), ('banana', 0.099...)]
+print(results)  # [('apple', 0.9938...), ('banana', 0.1104...)]
 ```
 
 ## Configuration
